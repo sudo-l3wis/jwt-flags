@@ -1,0 +1,48 @@
+{
+  "name": "sudo-l3wis/jwt-flags",
+  "description": "A package to extend JWT with token payload flags",
+  "keywords": ["jwt"],
+  "type": "package",
+  "authors": [
+    {
+      "name": "sudo-l3wis",
+      "email": "hi@l3wis.dev"
+    }
+  ],
+  "require": {
+    "php": "^7.4"
+  },
+  "require-dev": {
+    "tymon/jwt-auth": "^1.0",
+    "laravel/framework": "^7.0",
+    "facade/ignition": "^2.0",
+    "phpunit/phpunit": "^8.5",
+    "squizlabs/php_codesniffer": "3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "JWT\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JWTFlags\\": "src/",
+      "JWTFlags\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "JWTFlags\\Providers\\JWTFlagsServiceProvider"
+      ],
+      "aliases": {
+        "JWT": "JWTFlags\\JWTFlags"
+      }
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
